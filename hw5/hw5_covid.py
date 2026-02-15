@@ -18,11 +18,14 @@ def to_int(x):
     except:
         return 0
 
+#creating naming for months
 def month_name(year,month):
     return datetime(year, month, 1).strftime("%B")
 
 
 def main():
+
+    #reading the csv and getting the data
     states_pop = {}
     with open("data5500_mycode/hw5/states.csv", "r", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -34,16 +37,17 @@ def main():
     highest = None
     lowest = None
 
+    #setting parameters
     for state, population in states_pop.items():
         params = {
             "$where": f"state= '{state}' And end_date >= '2020-01-01' AND end_date <= '2023-12-31'",
             "$order": "end_date ASC",
-            "$limit": 50000
         }
         response = requests.get(BASE_URL, params = params, timeout=30)
         response.raise_for_status()
         data = response.json()
 
+        #creating new json files for each state
         with open(f"data5500_mycode/hw5/{state}.json", "w", encoding="utf-8") as out:
             json.dump(data, out, indent=2)
         
@@ -53,6 +57,7 @@ def main():
         dates = []
         weekly_cases = []
 
+        #grabbing end date for each row
         for row in data:
             end_date_str = row.get("end_date")
             if not end_date_str:
@@ -68,17 +73,21 @@ def main():
         if not weekly_cases:
             print(f"{state}, No weekly data.")
         
+        #calculating the averages and maxs
         avg_weekly = sum(weekly_cases) / len(weekly_cases)
         max_weekly = max(weekly_cases)
         max_index = weekly_cases.index(max_weekly)
         max_date = dates[max_index]
 
 
+        #creating dictionary for monthly totals for each state
         monthly_totals = {}
         for d, c in zip(dates, weekly_cases):
             key = (d.year, d.month)
             monthly_totals[key] = monthly_totals.get(key,0) + c
 
+
+        #calculating the best months
         best_key = max(monthly_totals, key=lambda k: monthly_totals[k])
         best_year, best_month = best_key
         best_monthly_total = monthly_totals[best_key]
@@ -87,12 +96,13 @@ def main():
 
         best_pct = (best_monthly_total / population) * 100
 
-        
+        #print statements for the states
         print(f"State name: {state}")
         print(f"Average Number of new cases: {avg_weekly:.2f}")
         print(f"Date with the highest new cases: {max_date} ({max_weekly})")
         print(f"Date with highest Percentage per population: {best_pct:.2f}% (Population: {population})")
         
+        #another dictoinary for stats about each state
         stats = {
             "state": state,
             "best_pct": best_pct,
@@ -101,11 +111,14 @@ def main():
             "population": population
         }
 
+        #setting the highest and lowest variables
         if highest is None or stats["best_pct"] > highest["best_pct"]:
             highest = stats
         if lowest is None or stats["best_pct"] < highest["best_pct"]:
             lowest = stats
 
+
+        #print statements for the highest and lowest
         print("State with highest percentage during its highest month:")
         print(
             f"{highest['state']} - {highest['best_pct']:.2f}% in {highest['best_month_str']} "
@@ -116,4 +129,6 @@ def main():
             f"{lowest['state']} - {lowest['best_pct']:.2f}% in {lowest['best_month_str']} "
         )
 
+
+#calling function
 main()
