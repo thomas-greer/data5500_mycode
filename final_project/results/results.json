@@ -1,0 +1,172 @@
+{
+    "date_ran": "2026-04-27 23:11:38",
+    "best_result": {
+        "stock": "META",
+        "strategy": "Mean Reversion",
+        "profit": 259.6
+    },
+    "all_results": [
+        {
+            "stock": "AAPL",
+            "strategy": "SMA Crossover",
+            "profit": -26.11,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "AAPL",
+            "strategy": "Mean Reversion",
+            "profit": 28.45,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "AAPL",
+            "strategy": "Momentum",
+            "profit": -50.34,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "MSFT",
+            "strategy": "SMA Crossover",
+            "profit": 57.2,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "MSFT",
+            "strategy": "Mean Reversion",
+            "profit": 52.26,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "MSFT",
+            "strategy": "Momentum",
+            "profit": -126.01,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "NVDA",
+            "strategy": "SMA Crossover",
+            "profit": -41.38,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "NVDA",
+            "strategy": "Mean Reversion",
+            "profit": 23.46,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "NVDA",
+            "strategy": "Momentum",
+            "profit": -92.33,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "TSLA",
+            "strategy": "SMA Crossover",
+            "profit": 49.17,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "TSLA",
+            "strategy": "Mean Reversion",
+            "profit": 43.0,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "TSLA",
+            "strategy": "Momentum",
+            "profit": -115.97,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "AMZN",
+            "strategy": "SMA Crossover",
+            "profit": -16.4,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "AMZN",
+            "strategy": "Mean Reversion",
+            "profit": 78.96,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "AMZN",
+            "strategy": "Momentum",
+            "profit": -71.48,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "GOOGL",
+            "strategy": "SMA Crossover",
+            "profit": 9.12,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "GOOGL",
+            "strategy": "Mean Reversion",
+            "profit": 68.7,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "GOOGL",
+            "strategy": "Momentum",
+            "profit": -74.07,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "META",
+            "strategy": "SMA Crossover",
+            "profit": -105.2,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "META",
+            "strategy": "Mean Reversion",
+            "profit": 259.6,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "META",
+            "strategy": "Momentum",
+            "profit": -104.61,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "NFLX",
+            "strategy": "SMA Crossover",
+            "profit": -13.56,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "NFLX",
+            "strategy": "Mean Reversion",
+            "profit": 23.78,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "NFLX",
+            "strategy": "Momentum",
+            "profit": -21.66,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "AMD",
+            "strategy": "SMA Crossover",
+            "profit": -70.35,
+            "last_signal": "buy"
+        },
+        {
+            "stock": "AMD",
+            "strategy": "Mean Reversion",
+            "profit": 73.92,
+            "last_signal": "sell"
+        },
+        {
+            "stock": "AMD",
+            "strategy": "Momentum",
+            "profit": -159.21,
+            "last_signal": "buy"
+        }
+    ]
+}
